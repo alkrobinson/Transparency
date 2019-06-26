@@ -1,0 +1,61 @@
+
+#dropdownYear,
+#dropdownType {
+  position: relative;
+}
+#title {
+  text-align:    center;
+  margin-top:    1.5em;
+  margin-bottom: 0;
+}
+#subTitle {
+  text-align: center;
+  margin-top: 0;
+}
+.yearComboText,
+.filterComboText {
+  width:  200px;
+  margin: 20px;
+  float:  left;
+}
+#combos {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+#chart1 {
+  min-width:  100%;
+
+}
+#loaded {
+  position:          fixed;
+  border:            16px solid #f3f3f3;
+  border-radius:     50%;
+  border-top:        16px solid #3498db;
+  width:             100px;
+  height:            100px;
+  -webkit-animation: spin 2s linear infinite;
+  //<editor-fold desc="Safari">
+  animation:         spin 2s linear infinite;
+  top:               50%;
+  left:              50%;
+  //</editor-fold>
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

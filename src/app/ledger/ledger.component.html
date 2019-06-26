@@ -1,0 +1,36 @@
+
+<ng-container *ngIf="notSupported">
+  <div>
+    <h3 style="text-align:center">
+      Sorry, this feature does not support Internet Explorer Browser. Try these browsers instead:<br>
+      Chrome, Firefox, Edge, Opera
+    </h3>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="!notSupported">
+    <div id='Ledger' class="Ledger">
+        <h1>{{title}}</h1>
+        <igx-grid id=checkbook #ledgerGrid width='90%' [showToolbar]="true" toolbarTitle=" " [exportExcel]="true" [exportCsv]="true"
+          (onToolbarExporting)="toolbarExportingHandler($event)" exportText="Export" exportExcelText="Export to Excel"
+          exportCsvText="Export to CSV" [data]="convData" [autoGenerate]="false" style="width:90%" [paging]="true" [perPage]='5'>
+          <igx-column width="10%" [resizable]='true' [dataType]="'date'" field="date" header="Date" [sortable]="true" [filterable]="true"
+            [groupable]="true" [formatter]='formatDate'></igx-column>
+          <igx-column width="20%"  [resizable]='true' [dataType]="'string'" field="vendor" header="Vendor" [sortable]="true" [filterable]="true"
+            [groupable]="true"></igx-column>
+          <igx-column width="30%" [resizable]='true' [dataType]="'string'" field="description" header="Description" [sortable]="true"
+            [filterable]="true" [groupable]="true"></igx-column>
+          <igx-column width="20%" [resizable]='true' [dataType]="'string'" field="fund" header="Fund" [sortable]="true" [filterable]="true"
+            [groupable]="true"></igx-column>
+          <igx-column width="10%" [resizable]='true' [dataType]="'number'" field="amount" header="Amount ($)" [sortable]="true"
+            [filterable]="true" [groupable]="true" [formatter]="formatMoney">
+          </igx-column>
+          <igx-column width="10%" [resizable]='true' [dataType]="'string'" field="paymentType" header="Debit/Credit" [sortable]="true"
+            [filterable]="true" [groupable]="true"></igx-column>
+          
+        </igx-grid>
+      </div>
+
+</ng-container>
+

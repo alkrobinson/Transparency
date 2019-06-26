@@ -1,0 +1,23 @@
+<div igxLayout>
+  <!--  
+    <igx-nav-drawer #nav id="project-menu" [pin]='false' [enableGestures]='true' width="280px">
+    <ng-template igxDrawer>
+      <span igxDrawerItem [isHeader]="true"><b>Menu</b></span>
+      <span *ngFor="let route of topNavLinks" igxDrawerItem [active]="route.name === selected" igxRipple (click)="navigate(route)"
+        routerLinkActive="igx-nav-drawer__item--active" routerLink="{{route.path}}">{{route.name}}</span>
+      <span igxDrawerItem (click)="redirect('https://greenecountymo.gov/')">Greene County Home</span>
+    </ng-template>
+  </igx-nav-drawer>
+
+  -->
+  
+  <div class="main" igxFlex igxLayout igxLayoutDir="columns">
+    <!-- <igx-navbar id="nav" title="Menu" actionButtonIcon="menu" (onAction)="nav.toggle()"></igx-navbar>  -->
+    <div id="gcSearch">
+      <div class="gcse-search"></div>
+    </div>
+    <div class="content" igxFlex>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

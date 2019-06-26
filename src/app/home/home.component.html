@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1>Welcome to the Greene County <br> Transparency Portal</h1>
+
+<div id="card_container">
+  <div id="rev_card">
+
+    <igx-card (click)="route('rev')">
+      <igx-card-header>
+        <h3 class="igx-card-header__title"><b>Adopted Revenue Budget</b></h3>
+        <h4 id="rev_total" class="igx-card-header__title">$</h4>
+      </igx-card-header>
+      <igx-card-content>
+        <h4 style="text-align:left;font-weight:normal">These are the revenue sources for the County. This represents
+          the adopted revenue budget for the current year.
+          <br>
+          <br>
+        </h4>
+      </igx-card-content>
+    </igx-card>
+
+  </div>
+
+  <div id="exp_card">
+
+
+    <igx-card (click)="route('exp')">
+      <igx-card-header>
+        <h3 class="igx-card-header__title"><b>Adopted Expense Budget</b></h3>
+        <h4 id="exp_total" class="igx-card-header__title">$</h4>
+      </igx-card-header>
+      <igx-card-content>
+        <h4 style="text-align:left;font-weight:normal">
+          Provides funding for the County's ongoing services and programs. This represents the adopted expense budget
+          for the current year.
+          <br>
+        </h4>
+      </igx-card-content>
+    </igx-card>
+
+
+
+
+  </div>
+  <br>
+
+</div>
+<h3>To view the full adopted budget document, please click <a href='https://greenecountymo.gov/budget/'>here</a>.</h3>

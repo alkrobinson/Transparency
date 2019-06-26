@@ -1,0 +1,52 @@
+<app-pathbar id='topPathbar' [graphType]="stParamGraph" [filterType]="stParamType" [year]="stParamYear"></app-pathbar>
+<div id="loaded"></div>
+<div hidden id="wait">
+  <h1 id="title"></h1>
+  <h1 id="subTitle">Budget vs. Actual</h1>
+
+  <div id="combos">
+    <h2 id="yearComboTitle">Year:</h2>
+    <igx-input-group class="yearComboText" type="box" #inputGroupYear (click)="toggledYear()">
+      <input igxInput #inputYear name="inputYear" type="text" [(ngModel)]="stParamYear" readonly placeholder="Choose Year..." />
+      <igx-suffix>
+        <igx-icon [name]="arrowYear"></igx-icon>
+      </igx-suffix>
+    </igx-input-group>
+    <igx-drop-down id="dropdownYear" #dropdownYear igxDropDownItemNavigation (onSelection)="selectYear($event)"
+      (onClosed)="onYearClosed()">
+      <igx-drop-down-item class="yearComboText" *ngFor="let year of data1">
+        {{ year }}
+      </igx-drop-down-item>
+    </igx-drop-down>
+
+    <h2 id="filterComboTitle">Filter:</h2>
+    <igx-input-group class="filterComboText" type="box" #inputGroupType (click)="toggledType()">
+      <input igxInput #inputType name="inputType" type="text" [(ngModel)]="stParamType" readonly placeholder="Choose Filter..." />
+      <igx-suffix>
+        <igx-icon [name]="arrowType"></igx-icon>
+      </igx-suffix>
+    </igx-input-group>
+    <igx-drop-down id="dropdownType" #dropdownType igxDropDownItemNavigation (onSelection)="selectType($event)"
+      (onClosed)="onTypeClosed()">
+      <igx-drop-down-item class="filterComboText" *ngFor="let type of data2">
+        {{ type }}
+      </igx-drop-down-item>
+    </igx-drop-down>
+
+  </div>
+  <div style="display: table;margin: auto;">
+    <h3 id="totals" style="text-align:right;font-weight:normal"></h3>
+  </div>
+
+  <br>
+  <br>
+
+  <chart id="chart1" #chart [type]="type" [data]="data" [options]="options" (clickElement)="output($event, toast)"
+    (click)="clickedCanvas($event, toast)" (mousemove)="mouseMove($event)"></chart>
+  <p id="description">This chart shows all the funds/types (y-axis) for the selected year
+    and compares the Actual(green bar) amount in dollars(in
+    millions) made by that fund/type to the total Budget(blue bar) for that fund/type.</p>
+  <igx-toast #toast message="No Sublayer"></igx-toast>
+  <div id="tooltipDiv" style="background-color:rgba(1,1,1,0.8);color:white"></div>
+
+</div>

@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+  text-align: center;
+}
+
+
+#card_container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+#rev_card {
+  width: 400px;
+  max-width: fit-content;
+  padding: 10px;
+  margin-right: 10px;
+  
+}
+
+#exp_card {
+  width: 400px;
+  max-width: fit-content;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+

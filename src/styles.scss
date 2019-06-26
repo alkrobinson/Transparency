@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+/* See: https://www.infragistics.com/products/ignite-ui-angular/angular/components/themes.html */
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$primary: #196fe4 !default;
+$secondary: #1be44d !default;
+
+$app-palette: igx-palette($primary, $secondary);
+
+@include igx-core();
+@include igx-theme($app-palette);
+
+
+:root {
+  min-width: 100%;
+  width:     max-content;
+}
+.igx-overlay__wrapper--modal {
+  z-index: 1;
+}
+.igx-overlay__wrapper {
+  z-index: 1;
+}
+.mat-tab-labels div {
+  background-color: #b6b6b6;
+  border-radius:    15px;
+  margin:           3px;
+  font-size:        1.2em;
+  color:            #000000;
+  font-weight:      bold;
+}
+
+a{
+  color: #196fe4 
+}

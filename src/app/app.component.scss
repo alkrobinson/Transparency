@@ -1,0 +1,17 @@
+.main {
+  width: 0;
+}
+.content {
+  width:           initial;
+  flex-flow:       row nowrap;
+  justify-content: center;
+  align-items:     stretch;
+  padding:         0 24px;
+  overflow:        auto;
+}
+@media only screen and (max-width: 1024px) {
+  .content {
+    padding:         0 15px;
+    justify-content: flex-start;
+  }
+}

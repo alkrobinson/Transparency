@@ -1,0 +1,8 @@
+<div id="path">
+  <a routerLink="/{{graphType.toLowerCase()}}/{{filterType}}/{{year}}">{{graphType}} | {{filterType}} | {{year}}</a>
+  <!--<a *ngFor="let layer of subLayers" [id]="layer.id">{{layer.value}}</a>-->
+  <ng-template ngFor let-item [ngForOf]="arrPath">
+    |
+    <a routerLink="/{{graphType.toLowerCase()}}/{{filterType}}/{{year}}/{{item['r_title'].replace(' ', '_').replace('/','_')}}/{{item['r_pk']}}">{{item['r_title']}}</a>
+  </ng-template>
+</div>

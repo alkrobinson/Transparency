@@ -1,0 +1,37 @@
+<app-pathbar id='subPathbar' [graphType]="stParamGraph" [filterType]="stParamType" [year]="stParamYear" [sublayerId]="stSubLayerId"
+  [subLayers]="subLayerList"></app-pathbar>
+<div id="loaded"></div>
+<div hidden id="wait">
+  <h1 id="title"></h1>
+  <h1 id="subTitle">Budget vs. Actual</h1>
+  <div style="display: table;margin: auto;">
+    <h3 id="totals" style="text-align:right;font-weight:normal"></h3>
+
+  </div>
+
+  <br>
+  <br>
+  <mat-tab-group mat-stretch-tabs [disableRipple]="true" *ngIf="stParamGraph=='Expense'" (selectedTabChange)="tabClicked($event)">
+    <mat-tab id="tabs" label="Chart">
+      <chart id="chart2" #chart2 [type]="type" [data]="data" [options]="options"
+        (click)="clickedCanvas($event, toast)"></chart>
+      <p id="description" style="text-align: center">This chart shows all the funds/types (y-axis) for the selected
+        year and compares the Actual(green bar) amount in dollars(in
+        millions) made by that fund/type to the total Budget(blue bar) for that fund/type.</p>
+      <igx-toast #toast message="No Sublayer" [position]="toastPosition"></igx-toast>
+    </mat-tab>
+    <mat-tab label="Checkbook">
+      <app-ledger #ledgerGrid></app-ledger>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div *ngIf="stParamGraph=='Revenue'">
+    <chart id="chart3" #chart3 [type]="type" [data]="data" [options]="options"
+      (click)="clickedCanvas($event, toast)"></chart>
+    <p id="description" style="text-align: center">This chart shows all the funds/types (y-axis) for the selected year
+      and compares the Actual(green bar) amount in dollars(in
+      millions) made by that fund/type to the total Budget(blue bar) for that fund/type.</p>
+    <igx-toast #toast message="No Sublayer" [position]="toastPosition"></igx-toast>
+  </div>
+
+</div>
