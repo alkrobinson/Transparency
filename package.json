@@ -30,7 +30,7 @@
     "igniteui-angular": "^6.1.8",
     "intl": "^1.2.5",
     "is_js": "^0.9.0",
-    "jszip": "^3.1.5",
+    "jszip": "^3.7.0",
     "node-gyp": "^3.8.0",
     "node-sass": "^4.11.0",
     "rxjs": "^6.3.3",
